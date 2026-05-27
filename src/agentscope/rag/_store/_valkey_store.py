@@ -169,6 +169,7 @@ class ValkeyStore(VDBStoreBase):
                 config = GlideClusterClientConfiguration(
                     addresses=[address],
                     use_tls=self._use_tls,
+                    client_name="agentscope_rag_store_client",
                     **self._client_kwargs,
                 )
                 self._client = await GlideClusterClient.create(
@@ -178,6 +179,7 @@ class ValkeyStore(VDBStoreBase):
                 config = GlideClientConfiguration(
                     addresses=[address],
                     use_tls=self._use_tls,
+                    client_name="agentscope_rag_store_client",
                     **self._client_kwargs,
                 )
                 self._client = await GlideClient.create(config)
